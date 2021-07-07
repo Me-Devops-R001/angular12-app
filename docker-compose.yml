@@ -8,6 +8,7 @@ services:
       dockerfile: ./Dockerfile
     environment:
       POSTGRES_PASSWORD: Trustno1
+    container_name: mypostgresqldb
     ports:
       - 5004:5004
       - 5432:5432
@@ -17,6 +18,6 @@ services:
 
 # sudo docker-compose up --build
 # sudo docker container ps
-# sudo docker container kill angular12-app_postgresqlexpressbatch_1
+# sudo docker container kill mypostgresqldb
 
 # TEST COMMANDS ---------------------------- END
