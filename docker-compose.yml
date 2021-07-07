@@ -1,13 +1,22 @@
 version: '3.4'
 
 services:
-  postgresqlexpressbatch:
-    image: postgresqlexpressbatch
+  postgresqlexpressinfra:
+    image: postgresqlexpressinfra
     build:
-      context: backend/postgresql-express-batch
+      context: backend/infra/postgresql/
       dockerfile: ./Dockerfile
     environment:
-      NODE_ENV: production
+      POSTGRES_PASSWORD: Trustno1
     ports:
       - 5004:5004
       - 5432:5432
+
+
+# TEST COMMANDS ---------------------------- BEGIN
+
+# sudo docker-compose up --build
+# sudo docker container ps
+# sudo docker container kill angular12-app_postgresqlexpressbatch_1
+
+# TEST COMMANDS ---------------------------- END
