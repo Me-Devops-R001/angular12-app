@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  postgresqlexpressbatch:
+    image: postgresqlexpressbatch
+    build:
+      context: backend/postgresql-express-batch
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: development
+    ports:
+      - 5004:5004
+      - 5432:5432
+      - 9229:9229
+    command: ["node", "--inspect=0.0.0.0:9229", "index.js"]
