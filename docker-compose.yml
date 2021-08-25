@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  postgresqlexpressinfra:
+    image: postgresqlexpressinfra
+    build:
+      context: backend/infra/postgresql/
+      dockerfile: ./Dockerfile
+    environment:
+      POSTGRES_PASSWORD: Trustno1
+    container_name: mypostgresqldb
+    ports:
+      - 5004:5004
+      - 5432:5432
+
+
+# TEST COMMANDS ---------------------------- BEGIN
+
+# sudo docker-compose up --build
+# sudo docker container ps
+# sudo docker container kill mypostgresqldb
+
+# TEST COMMANDS ---------------------------- END
