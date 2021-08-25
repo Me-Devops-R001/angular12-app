@@ -7,8 +7,8 @@
             "preLaunchTask": "docker-run: debug",
             "platform": "node",
             "node": {
-                "package": "${workspaceFolder}/backend/postgresql-express-batch/package.json",
-                "localRoot": "${workspaceFolder}/backend/postgresql-express-batch"
+                "package": "${workspaceFolder}/infra/frontend/package.json",
+                "localRoot": "${workspaceFolder}/infra/frontend"
             }
         }
     ]

@@ -1,10 +1,20 @@
 version: '3.4'
 
 services:
-  postgresqlexpressinfra:
+- angularstarter:
+    image: angularstarter
+    build:
+      context: infra/frontend
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000
+      
+- postgresqlexpressinfra:
     image: postgresqlexpressinfra
     build:
-      context: backend/infra/postgresql/
+      context: infra/postgresql/
       dockerfile: ./Dockerfile
     environment:
       POSTGRES_PASSWORD: Trustno1
@@ -21,3 +31,4 @@ services:
 # sudo docker container kill mypostgresqldb
 
 # TEST COMMANDS ---------------------------- END
+
