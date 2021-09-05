@@ -6,12 +6,12 @@
 			"label": "docker-build",
 			"platform": "node",
 			"dockerBuild": {
-				"dockerfile": "${workspaceFolder}/backend/postgresql-express-batch/Dockerfile",
-				"context": "${workspaceFolder}/backend/postgresql-express-batch",
+				"dockerfile": "${workspaceFolder}/infra/frontend/Dockerfile",
+				"context": "${workspaceFolder}/infra/frontend",
 				"pull": true
 			},
 			"node": {
-				"package": "${workspaceFolder}/backend/postgresql-express-batch/package.json"
+				"package": "${workspaceFolder}/infra/frontend/package.json"
 			}
 		},
 		{
@@ -22,7 +22,7 @@
 			],
 			"platform": "node",
 			"node": {
-				"package": "${workspaceFolder}/backend/postgresql-express-batch/package.json"
+				"package": "${workspaceFolder}/infra/frontend/package.json"
 			}
 		},
 		{
@@ -38,7 +38,7 @@
 				}
 			},
 			"node": {
-				"package": "${workspaceFolder}/backend/postgresql-express-batch/package.json",
+				"package": "${workspaceFolder}/infra/frontend/package.json",
 				"enableDebugging": true
 			}
 		}
