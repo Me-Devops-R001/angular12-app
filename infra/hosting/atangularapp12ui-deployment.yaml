@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: atangularapp12ui-frontend
+  labels:
+    app: atangularapp12ui
+spec:
+  selector:
+    matchLabels:
+      app: atangularapp12ui
+      tags: 1.0.0.0
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: atangularapp12ui
+        tags: 1.0.0.0
+    spec:
+      containers:
+      - name: ng-atangularapp12ui
+        image: docker.io/amtayaji/atangularapp12ui:1.0.0.0
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 1024Mi
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        env:
+        - name: GET_HOSTS_FROM
+          value: env
+        - name: REDIS_SLAVE_SERVICE_HOST
+          value: redis-replica
+        ports:
+        - containerPort: 4000
