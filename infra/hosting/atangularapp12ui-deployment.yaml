@@ -17,7 +17,7 @@ spec:
         tags: 1.0.0.0
     spec:
       containers:
-      - name: ng-atangularapp12ui
+      - name: atangularapp12ui
         image: docker.io/amtayaji/atangularapp12ui:1.0.0.0
         resources:
           limits:
