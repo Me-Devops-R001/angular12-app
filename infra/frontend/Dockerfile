@@ -36,3 +36,14 @@ CMD ["npm run", "serve:ssr"]
 # sudo docker exec --interactive --tty bash
 
 # TEST COMMANDS END ----------------------------
+
+
+
+# HOSTING COMMANDS BEGIN ----------------------------
+
+# sudo docker login --username "amtayaji" --password-stdin
+# sudo docker login --username "amtayaji" --password amit#@+1
+# sudo docker tag atangularapp12ui:1.0.0.0 amtayaji/atangularapp12ui:1.0.0.0
+# sudo docker push amtayaji/atangularapp12ui:1.0.0.0
+
+# HOSTING COMMANDS END ----------------------------
