@@ -28,10 +28,10 @@ read -p "Do you want to instantiate a test container (Y/N)? " crearecontainer
     if ([ $crearecontainer = "Y" ] || [ $crearecontainer = "y" ])
     then
         docker container run -d --rm -p 4000:4000 --name at-test-$imagename-$imageversion $imagename:$imageversion
-        read -p "Container created with Name = at-test-$imagename-$imageversion"
+        read -p "Container created with Name = at-test-$imagename-$imageversion ..." dudkey
         docker container ls
         read -p "Do you wish to bash into this container (Y/N)? " bashintoit
-            ([ $bashintoit = "Y" ] || [ $bashintoit = "y" ]) && { docker exec --interactive --tty at-test-$imagename-$imageversion bash -c "echo 'Hello Tyagi'";}
+            ([ $bashintoit = "Y" ] || [ $bashintoit = "y" ]) && ( docker exec --interactive --tty "at-test-$imagename-$imageversion" /bin/bash ;)
     fi
 
 read -p "Image creation complete, Do you wish to deploy it to Docker Hub (Y/N)? " dodeployment
