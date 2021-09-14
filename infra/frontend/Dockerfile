@@ -7,11 +7,15 @@ FROM node:latest
 # Set the working directory
 WORKDIR /usr/local/app
 
-# Add the source code to app
-COPY ./ /usr/local/app/
+# Install app dependencies
+COPY package.json /usr/local/app/
+RUN npm install
+
+# Add the Bundle app source code to app folder
+COPY . /usr/local/app/
 
 # Install all the dependencies
-RUN npm install
+# RUN npm install
 
 # Generate the build of the application
 RUN npm run build:ssr
@@ -25,9 +29,9 @@ CMD ["npm run", "serve:ssr"]
 
 # TEST COMMANDS BEGIN ----------------------------
 
-# sudo docker build . --tag atfrontendtest:latest
+# sudo docker build . --tag atangularapp12ui:1.0.0.0
 # sudo docker images
-# sudo docker container run -d --rm -p 4000:4000 --name at_test_frontend-0.0.0.1 atfrontendtest:latest
+# sudo docker container run -d --rm -p 4000:4000 --name at_test_frontend-0.0.0.1 atangularapp12ui:latest
 # sudo docker container ls
 # sudo docker exec --interactive --tty bash
 
