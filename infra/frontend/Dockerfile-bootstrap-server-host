@@ -8,19 +8,22 @@ FROM node:latest
 WORKDIR /usr/local/app
 
 # Install app dependencies
-COPY package.json /usr/local/app/
+COPY package.json .
 RUN npm install
 
 # Add the Bundle app source code to app folder
-COPY . /usr/local/app/
+COPY . .
 
 # Install all the dependencies
 # RUN npm install
 
 # Generate the build of the application
 RUN npm run build:ssr
-
+# Stroke up the bootstrap server
+RUN npm run ignite:ssr
+# Expose the https listening port
 EXPOSE 4000
 
 # USER node
 CMD ["npm run", "serve:ssr"]
+# CMD ["node", "dist/angular-starter/server/main.js"]

@@ -27,7 +27,7 @@ read -p "Do you want to see list of the local docker images (Y/N)?  " listimages
 read -p "Do you want to instantiate a test container (Y/N)? " crearecontainer
     if ([ $crearecontainer = "Y" ] || [ $crearecontainer = "y" ])
     then
-        docker container run -d --rm -p 4000:4000 --name at-test-$imagename-$imageversion $imagename:$imageversion
+        docker run -d --rm -p 4000:4000 --name at-test-$imagename-$imageversion $imagename:$imageversion
         read -p "Container created with Name = at-test-$imagename-$imageversion ..." dudkey
         docker container ls
         read -p "Do you wish to bash into this container (Y/N)? " bashintoit
