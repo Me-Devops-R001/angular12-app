@@ -9,7 +9,8 @@
     "test": "ng test",
     "dev:ssr": "ng run angular-starter:serve-ssr",
     "serve:ssr": "node dist/angular-starter/server/main.js",
-    "build:ssr": "ng build && ng run angular-starter:server",
+    "build:ssr": "ng build",
+    "ignite:ssr": "ng run angular-starter:server",
     "prerender": "ng run angular-starter:prerender"
   },
   "author": {
