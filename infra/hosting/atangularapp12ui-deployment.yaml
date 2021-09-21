@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: atangularapp12ui-frontend
+  name: at-ng-app12ui-frontend
   labels:
-    app: atangularapp12ui
+    app: at-ng-app12ui
 spec:
   selector:
     matchLabels:
-      app: atangularapp12ui
+      app: at-ng-app12ui
       tags: 1.0.0.0
   replicas: 3
   template:
     metadata:
       labels:
-        app: atangularapp12ui
+        app: at-ng-app12ui
         tags: 1.0.0.0
     spec:
       containers:
-      - name: atangularapp12ui
-        image: docker.io/amtayaji/atangularapp12ui:1.0.0.0
+      - name: at-ng-app12ui
+        image: docker.io/amtayaji/at-ng-app12ui:1.0.0.0
         resources:
           limits:
             cpu: 1000m
