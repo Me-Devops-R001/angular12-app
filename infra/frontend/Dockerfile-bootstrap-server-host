@@ -25,5 +25,5 @@ RUN npm run ignite:ssr
 EXPOSE 4000
 
 # USER node
-CMD ["npm run", "serve:ssr"]
-# CMD ["node", "dist/angular-starter/server/main.js"]
+# CMD ["npm run-script", "serve:ssr"]
+CMD ["node", "dist/angular-starter/server/main.js"]
