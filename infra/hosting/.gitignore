@@ -2,7 +2,6 @@
 
 # Azure Scratch pad
 /.azcli
-deployment*.json
 
 # compiled output
 /dist
